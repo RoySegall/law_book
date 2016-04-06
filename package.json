@@ -1,0 +1,13 @@
+{
+  "name": "law_book",
+  "version": "1.0.0",
+  "description": "Israel book of laws",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "rethinkdb": "^2.2.3"
+  }
+}

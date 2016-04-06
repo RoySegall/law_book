@@ -1,0 +1,26 @@
+2016-04-04T21:38:26.069687000 0.396360s notice: Recursively removing directory /Applications/MAMP/htdocs/law_book/rethinkdb_data/tmp
+2016-04-04T21:38:26.071079000 0.397755s notice: Initializing directory /Applications/MAMP/htdocs/law_book/rethinkdb_data
+2016-04-04T21:38:26.071582000 0.398255s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Applications/MAMP/htdocs/law_book/rethinkdb_data' did not already exist or is empty.)
+2016-04-04T21:38:26.071620000 0.398291s notice: Running rethinkdb 2.2.6 (CLANG 4.2 (clang-425.0.28))...
+2016-04-04T21:38:26.078861000 0.405534s notice: Running on Darwin 15.4.0 x86_64
+2016-04-04T21:38:26.078918000 0.405589s notice: Loading data from directory /Applications/MAMP/htdocs/law_book/rethinkdb_data
+2016-04-04T21:38:26.182472000 0.509144s info: Automatically using cache size of 100 MB
+2016-04-04T21:38:26.182485000 0.509156s warn: Cache size is larger than available memory.
+2016-04-04T21:38:26.182492000 0.509163s warn: Cache size is very low and may impact performance.
+2016-04-04T21:38:26.184089000 0.510760s notice: Listening for intracluster connections on port 29015
+2016-04-04T21:38:26.186726000 0.513398s notice: Listening for client driver connections on port 28015
+2016-04-04T21:38:26.186900000 0.513572s notice: Listening for administrative HTTP connections on port 8080
+2016-04-04T21:38:26.186906000 0.513577s notice: Listening on addresses: 127.0.0.1, ::1
+2016-04-04T21:38:26.186910000 0.513582s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-04-04T21:38:26.186915000 0.513586s notice: Server ready, "Roys_MacBook_Pro_2_local_o06" 5160ef56-dc83-4b6d-bf3e-7357d9b7297c
+2016-04-04T21:46:26.127288000 480.471386s info: Table f029f7e3-df56-46dd-8fd7-d86e4beb98cc: Added replica on this server.
+2016-04-04T21:46:27.686864000 482.031039s info: Table f029f7e3-df56-46dd-8fd7-d86e4beb98cc: Starting a new Raft election for term 1.
+2016-04-04T21:46:27.702762000 482.046937s info: Table f029f7e3-df56-46dd-8fd7-d86e4beb98cc: This server is Raft leader for term 1. Latest log index is 0.
+2016-04-04T21:56:15.806394000 1070.171953s info: Table 5ddf5103-2971-4c92-9f25-9c3c91d1c516: Added replica on this server.
+2016-04-04T21:56:16.903865000 1071.269461s info: Table 5ddf5103-2971-4c92-9f25-9c3c91d1c516: Starting a new Raft election for term 1.
+2016-04-04T21:56:16.919412000 1071.285009s info: Table 5ddf5103-2971-4c92-9f25-9c3c91d1c516: This server is Raft leader for term 1. Latest log index is 0.
+2016-04-05T15:51:47.155043000 27097.957059s notice: Server got SIGINT from pid 1339, uid 501; shutting down...
+2016-04-05T15:51:47.158023000 27097.960036s notice: Shutting down client connections...
+2016-04-05T15:51:47.160484000 27097.962497s notice: All client connections closed.
+2016-04-05T15:51:47.160492000 27097.962504s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-04-05T15:51:47.196561000 27097.998574s notice: Storage engine shut down.
