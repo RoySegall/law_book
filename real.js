@@ -25,6 +25,7 @@ r.connect({host: 'localhost', port: '28015'}, function(err, conn) {
       console.log(JSON.stringify(row, null, 2));
     });
   });
+
 });
 
 

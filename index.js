@@ -95,15 +95,21 @@ r.connect({host: 'localhost', port: '28015'}, function(err, conn) {
   //  console.log(JSON.stringify(result, null, 2));
   //});
 
-  db.table('people').insert([
-    { name: "Roy Segall", tv_show: "Drupa from a to amazing!",
-      posts: [
-        {title: "Decommissioning speech", content: "The Cylon War is long over..."},
-      ]
-    }
-  ]).run(connection, function(err, result) {
-    if (err) throw err;
-    console.log(JSON.stringify(result, null, 2));
-  });
+  //db.table('people').insert([
+  //  { name: "Roy Segall", tv_show: "Drupa from a to amazing!",
+  //    posts: [
+  //      {title: "Decommissioning speech", content: "The Cylon War is long over..."},
+  //    ]
+  //  }
+  //]).run(connection, function(err, result) {
+  //  if (err) throw err;
+  //  console.log(JSON.stringify(result, null, 2));
+  //});
+
+  //var foo = r.http('http://live-drupalhub.pantheonsite.io/api');
+  //
+  //foo.run(conn, function (err, result) {
+  //  console.log(JSON.stringify(result, null, 2));
+  //});
 });
 
