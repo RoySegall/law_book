@@ -50,8 +50,37 @@ app.get('/set_tables', function (req, res) {
 
       });
   });
-
 });
+
+app.route('/items')
+  .get(function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var connection = null;
+
+    r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
+      if (err) {
+        throw err;
+      }
+
+      connection = conn;
+
+      r.db('circuit').table('items').run(connection, function(err, cursor) {
+        if (err) {
+          throw err;
+        }
+
+        cursor.toArray(function(err, result) {
+          if (err) {
+            throw err;
+          }
+          res.send(JSON.stringify(result, null, 2));
+
+        });
+      });
+    });
+
+    console.log('Get list of users.');
+  });
 
 app.listen(2020, function() {
   console.log('Started');
