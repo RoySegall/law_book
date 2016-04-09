@@ -80,6 +80,11 @@ app.route('/items')
     });
 
     console.log('Get list of users.');
+  })
+  .post(function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    console.log(req);
+    res.send(JSON.stringify({foo: 'bar'}));
   });
 
 app.listen(2020, function() {
