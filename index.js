@@ -5,9 +5,9 @@
 var r = require('rethinkdb');
 var express = require('express');
 var app = express();
+var connection = null;
 
 app.get('/set_tables', function (req, res) {
-  var connection = null;
   var text = "";
 
   r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
@@ -55,7 +55,6 @@ app.get('/set_tables', function (req, res) {
 app.route('/items')
   .get(function(req, res) {
     res.setHeader('Content-Type', 'application/json');
-    var connection = null;
 
     r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
       if (err) {
@@ -80,11 +79,24 @@ app.route('/items')
     });
 
     console.log('Get list of users.');
-  })
-  .post(function(req, res) {
-    res.setHeader('Content-Type', 'application/json');
-    console.log(req);
-    res.send(JSON.stringify({foo: 'bar'}));
+  }).post(function(req, res) {
+    r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
+      if (err) {
+        throw err;
+      }
+
+      connection = conn;
+
+      // how to get information from the request?
+      r.db('circuit').table('items').insert({
+        title: 'Piano',
+        price: '200',
+        amount: 1
+      }).run(conn, function() {
+        res.send('Passed');
+      });
+    });
+
   });
 
 app.listen(2020, function() {
