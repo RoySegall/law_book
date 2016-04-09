@@ -19,33 +19,36 @@ app.get('/set_tables', function (req, res) {
     text += "Connection started";
     text += "<br />Setting up the DB";
 
-    var db = r.db('circuit');
-
+  }).then(function() {
     r.dbCreate('circuit').run(connection, function (err, result) {
       if (err) {
         throw err;
       }
     })
-    .then(function() {
-      db.tableCreate('items').run(connection, function (err, result) {
-        if (err) {
-          throw err;
-        }
+      .then(function() {
+        var db = r.db('circuit');
 
-        text += "<br />Creating items table";
+        db.tableCreate('items').run(connection, function (err, result) {
+          if (err) {
+            throw err;
+          }
+
+          text += "<br />Creating items table";
+        })
+          .then(function() {
+            db.tableCreate('auctions').run(connection, function (err, result) {
+              if (err) {
+                throw err;
+              }
+
+              text += "<br />Creating auctions table";
+            })
+              .then(function() {
+                res.send(text);
+              });
+          });
+
       });
-
-      db.tableCreate('auctions').run(connection, function (err, result) {
-        if (err) {
-          throw err;
-        }
-
-        text += "<br />Creating auctions table";
-      });
-    });
-
-  }).then(function() {
-    res.send(text);
   });
 
 });
